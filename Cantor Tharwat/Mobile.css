@@ -1,0 +1,55 @@
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    /* CSS styles for screens smaller than 768px */
+    .mobile {
+        display: initial;
+    }
+
+    .menu-btn {
+        height: 40%;
+        margin: 2rem;
+    }
+
+    .logoband {
+        height: 13%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: left;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 90%;
+        margin: 0;
+    }
+
+
+    .container {
+        margin-top: -7.5rem;
+        display: none;
+        flex-direction: row;
+        justify-content: right;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+        transition: 0.3s ease-in-out;
+        position: fixed;
+    }
+
+    .menu:checked {
+        display: flex;
+    }
+
+    .latest {
+        padding-top: 9rem;
+        background-color: #e4e4e4;
+    }
+
+}

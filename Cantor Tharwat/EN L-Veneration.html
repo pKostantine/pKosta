@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="Cantor Tharwat.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Veneration (Live)</title>
+</head>
+<body>
+    <!-- Cantor Tharwat المعلم ثروت -->
+
+    <!-- Header and Sidebar -->
+    <section id="player">
+        <section class="logoband">
+            <img class="logo" src="Cantor Tharwat Logo 4.png" alt="" onclick="homeEN()">
+            <div class="container">
+                <img class="logos" src="Instagram Clear Logo.png" alt="" onclick="ig()">
+                <img class="logos" src="Facebook Clear Logo.png" alt="" onclick="fb()">
+                <img class="logos" src="Soundcloud Clear Logo.png" alt="" onclick="sc()">
+                <img class="logos" src="Youtube Clear Logo.png" alt="" onclick="yt()">
+                <img class="logos" src="Spotify Clear Logo.png" alt="" onclick="spotify()">
+                <img class="logos" src="Apple Music Clear Logo.png" alt="" onclick="apple()">
+                <p class="contact">Email: vmsachorus@gmail.com</p>
+            </div>
+        </section>
+        <section class="buttonband">
+            <div>
+                <button class="menubuttons" onclick="homeEN()">Home</button>
+                <button class="menubuttons" onclick="liveEN()" style="color: white;">Live Recordings</button>
+                <button class="menubuttons" onclick="studioEN()">Studio Recordings</button>
+                <button class="menubuttons" onclick="lyricsEN()">Lyrics</button>
+                <button class="menubuttons" onclick="lessonsEN()">Lessons</button>
+                <button class="menubuttons" onclick="homeAR()">عربي</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Live Psalmody Page -->
+
+    <section>
+      <div class="player-container">
+        <!-- Song -->
+        <div class="img-container">
+            <img src="" alt="Album Art">
+        </div>
+        <h2 id="title"></h2>
+        <h3 id="artist"></h3>
+        <audio src=""></audio>
+        <!-- Progress -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration"></span>
+            </div>
+        </div>
+        <!-- Controls -->
+        <div class="player-controls">
+            <i class="fas fa-backward" id="prev" title="Previous"></i>
+            <i class="fas fa-play main-button" id="play" title="Play"></i>
+            <i class="fas fa-forward" id="next" title="Next"></i>
+        </div>
+    </div>
+    <div class="player-container songs-container">
+        <table class="songs-list">
+            <tbody><td id="song-box">1 - Litany of the Oblations Response</td></tbody>
+            <tbody><td id="song-box">2 - The Vespers Doxology for the Virgin</td></tbody>
+            <tbody><td id="song-box">3 - Major Psalm</td></tbody>
+            <tbody><td id="song-box">1 - Litany of the Oblations Response</td></tbody>
+            <tbody><td id="song-box">2 - The Vespers Doxology for the Virgin</td></tbody>
+            <tbody><td id="song-box">3 - Major Psalm</td></tbody>
+            <tbody><td id="song-box">1 - Litany of the Oblations Response</td></tbody>
+            <tbody><td id="song-box">2 - The Vespers Doxology for the Virgin</td></tbody>
+            <tbody><td id="song-box">3 - Major Psalm</td></tbody>
+        </table>
+    </div>
+    </section>
+    <script src="Functions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

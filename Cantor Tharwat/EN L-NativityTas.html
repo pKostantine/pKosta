@@ -1,0 +1,565 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cantor Tharwat.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="Mobile.css">
+    <title>Live Sunday Midnight Praises</title>
+</head>
+<body>
+    <!-- Cantor Tharwat المعلم ثروت -->
+
+    <!-- Header and Sidebar -->
+    <section>
+        <section class="logoband">
+            <img class="logo" src="img/Cantor Tharwat Logo 4.png" alt="" onclick="homeEN()">
+            <div class="container">
+                <img class="logos" src="img/Instagram Clear Logo.png" alt="" onclick="ig()">
+                <img class="logos" src="img/Facebook Clear Logo.png" alt="" onclick="fb()">
+                <img class="logos" src="img/Soundcloud Clear Logo.png" alt="" onclick="sc()">
+                <img class="logos" src="img/Youtube Clear Logo.png" alt="" onclick="yt()">
+                <img class="logos" src="img/Spotify Clear Logo.png" alt="" onclick="spotify()">
+                <img class="logos" src="img/Apple Music Clear Logo.png" alt="" onclick="apple()">
+                <p class="contact">Email: cantortharwat.feedback@gmail.com</p>
+            </div>
+        </section>
+        <section class="menu">
+            <div>
+                <button class="menubuttons" onclick="homeEN()">Home</button>
+                <button class="menubuttons menu-current" onclick="liveEN()">Live Recordings</button>
+                <button class="menubuttons" onclick="studioEN()">Studio Recordings</button>
+                <button class="menubuttons unreleased">Lyrics</button>
+                <button class="menubuttons unreleased">Lessons</button>
+                <button class="menubuttons unreleased">عربي</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Live Nativity Tas Page -->
+
+    <section class="player">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Music Player</title>
+            <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+            <link rel="stylesheet" href="Player.css">
+        </head>
+        <body>
+            <div class="player-container temp-container hidden" style="width: 0px;"></div>
+            <!-- <div class="player-container lyrics-container">
+                <span onclick="liveEN()" class="back-button"><i class="material-icons">chevron_left</i></span>
+                <span id="showLyricsBtn" class="material-symbols-outlined open-full-icon">open_in_full</span>
+                <span id="closeLyricsBtn" class="material-symbols-outlined open-full-icon" style="display: none;">close_fullscreen</span>
+                <h1 class="player-lyrics-title">Lyrics</h1>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" style=" width: 23rem; margin: 1rem; z-index: 11; position: relative;">
+                    <input type="checkbox" checked class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck1" id="englishBtn">English</label>
+                  
+                    <input type="checkbox" checked class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck2" id="copticBtn">Coptic</label>
+                  
+                    <input type="checkbox" checked class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck3" id="arabicBtn">Arabic</label>
+                </div>
+                <table class="table-lang">
+                    <tr>
+                        <td class="lyrics-cell english-lyrics" id="englishLyrics">Coming Soon</td>
+                        <td class="lyrics-cell arabic-lyrics" id="arabicLyrics">قريباً</td>
+                    </tr>
+                </table>
+            </div> -->
+            <div class="player-container">
+                <!-- Song -->
+                <div class="img-container">
+                    <img src="img/Live Sunday Midnight Praises Album.png" alt="Album Art">
+                </div>
+                <h2 id="title"></h2>
+                <audio src=""></audio>
+                <!-- Progress -->
+                <div class="progress-n-controls">
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress" id="progress"></div>
+                        <div class="duration-wrapper">
+                            <span id="current-time">0:00</span>
+                            <span id="duration"></span>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="player-controls" style="z-index: 13;">
+                        <i class="fas fa-backward" id="prev" title="Previous"></i>
+                        <i class="fas fa-play main-button" id="play" title="Play"></i>
+                        <i class="fa-forward fas" id="next" title="Next"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="player-container songs-container">
+                <span onclick="liveEN()" class="back-button"><i class="material-icons">chevron_left</i></span>
+                <h1 class="player-lyrics-title" style="color: transparent;">.</h1>
+                <table class="songs-list">
+                    <tbody><td onclick="selectSong(0)">Tenthinou</td></tbody>
+                    <tbody><td onclick="selectSong(1)">First Hoos and Khen Oushot</td></tbody>
+                    <tbody><td onclick="selectSong(2)">Second Hoos and Marenouonh</td></tbody>
+                    <tbody><td onclick="selectSong(3)">Third Hoos</td></tbody>
+                    <tbody><td onclick="selectSong(4)">Aripsaleen and Tenoweh</td></tbody>
+                    <tbody><td onclick="selectSong(5)">Commemoration of the Saints and Doxologies</td></tbody>
+                    <tbody><td onclick="selectSong(6)">Fourth Hoos</td></tbody>
+                    <tbody><td onclick="selectSong(7)">The Psalis</td></tbody>
+                    <tbody><td onclick="selectSong(8)">Theotokias 1-6</td></tbody>
+                    <tbody><td onclick="selectSong(9)">Shere ne Maria</td></tbody>
+                    <tbody><td onclick="selectSong(10)">Teoi Enhikanos and Nim Ghar</td></tbody>
+                    <tbody><td onclick="selectSong(11)">Neknai O Panouti and Conclusion</td></tbody>
+                </table>
+            </div>
+            
+        </body>
+        <script>
+            const image = document.querySelector("img");
+            const title = document.getElementById("title");
+            const artist = document.getElementById("artist");
+            const music = document.querySelector("audio");
+            const progressContainer = document.getElementById("progress-container");
+            const progress = document.getElementById("progress");
+            const currentTimeEle = document.getElementById("current-time");
+            const durationEle = document.getElementById("duration");
+            const prevBtn = document.getElementById("prev");
+            const playBtn = document.getElementById("play");
+            const nextBtn = document.getElementById("next");
+
+            // const table = document.querySelector('.table-lang');
+
+            // for (let i = 1; i <= 11; i++) {
+            //     const row = document.createElement('tr');
+
+            //     const englishCell = document.createElement('td');
+            //     englishCell.className = 'lyrics-cell english-lyrics';
+            //     englishCell.id = `englishLyrics${i}`;
+            //     row.appendChild(englishCell);
+
+            //     const copticCell = document.createElement('td');
+            //     copticCell.className = 'lyrics-cell coptic-lyrics';
+            //     copticCell.id = `copticLyrics${i}`;
+            //     row.appendChild(copticCell);
+
+            //     const arabicCell = document.createElement('td');
+            //     arabicCell.className = 'lyrics-cell arabic-lyrics';
+            //     arabicCell.id = `arabicLyrics${i}`;
+            //     row.appendChild(arabicCell);
+
+            //     table.appendChild(row);
+            // }
+
+            // Music
+            const songs = [
+                {
+                    name: "01 Tenthinou",
+                    displayName: "Tenthinou",
+                    english: [
+                        "Lord have mercy",
+                        "We worship the Father and the Son : and the Holy Spirit : the holy and co-essential : Trinity.",
+                        "Hail to the Church : the house of the angels : hail to the Virgin : who gave birth to our Savior.",
+                    ],
+                    coptic: [
+                        "ⲕⲩⲣⲓⲉ ⲉⲗⲉⲏⲥⲟⲛ",
+                        "ⲧⲉⲛⲟⲩⲱϣⲧ ⲙⲫⲓⲱⲧ ⲛⲉⲙ ⲡϣⲏⲣⲓ : ⲛⲉⲙ ⲡⲓⲡⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ : Ϯⲧⲣⲓⲁⲥ ⲉⲑⲟⲩⲁⲃ : ⲛⲟⲙⲟⲟⲩⲥⲓⲟⲥ.",
+                        "ⲭⲉⲣⲉ Ϯⲉⲕⲕⲗⲏⲥⲓⲁ : ⲡⲏⲓ ⲛⲧⲉ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ : ⲭⲉⲣⲉ Ϯⲡⲁⲣⲑⲉⲛⲟⲥ : ⲉⲧⲁⲥⲙⲉⲥ ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                    ],
+                    arabic: [
+                        "يا ربُّ إرحَم.",
+                        "نسجد للآب والإبن : والروح القدس : الثالوث القدوس : المساوي في الجوهر.",
+                        "السلام للكنيسة : بيت الملائكة : السلام للعذراء : التي ولدت مخلصنا.",
+                    ]
+                },
+                {
+                    name: "02 First Hoos and Khen Oushot",
+                    displayName: "First Hoos and Khen Oushot",
+                    english: [
+                        "Lord have mercy",
+                        "O come let us worship : the Holy Trinity : the Father and the Son : and the Holy Spirit.",
+                        "We are the Christian : people : for He is our : true God.",
+                        "We have hope : in Saint Mary : that God will have mercy on us : through her intercessions.",
+                        "All calmness : in the world : is through the prayers : of Saint Mary the Virgin.",
+                    ],
+                    coptic: [
+                        "ⲕⲩⲣⲓⲉ ⲉⲗⲉⲏⲥⲟⲛ",
+                        "ⲁⲙⲱⲓⲛⲓ ⲙⲁⲣⲉⲛⲟⲩⲱϣⲧ : ⲛϯⲧⲣⲓⲁⲥ ⲉⲑⲟⲩⲁⲃ : ⲉⲧⲉ ⲫⲓⲱⲧ ⲛⲉⲙ ⲡϣⲏⲣⲓ : ⲛⲉⲙ ⲡⲓⲡⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ.",
+                        "ⲁⲛⲟⲛ ϧⲁ ⲛⲓⲗⲁⲟⲥ : ⲛⲭⲣⲓⲥⲧⲓⲁⲛⲟⲥ : ⲫⲁⲓ ⲅⲁⲣ ⲡⲉ ⲡⲉⲛⲛⲟⲩϯ : ⲛⲁⲗⲏⲑⲓⲛⲟⲥ.",
+                        "ⲟⲩⲟⲛ ⲟⲩϩⲉⲗⲡⲓⲥ ⲛⲧⲁⲛ : ϧⲉⲛ ⲑⲏⲉⲑⲟⲩⲁⲃ ⲙⲁⲣⲓⲁ : ⲉⲣⲉ ⲫϯ ⲛⲁⲓ ⲛⲁⲛ : ϩⲓⲧⲉⲛ ⲛⲉⲥⲡⲣⲉⲥⲃⲓⲁ.",
+                        "ⲟⲩⲟⲛ ⲟⲩⲙⲉⲧⲥⲉⲙⲛⲟⲥ : ⲛϩⲣⲏⲓ ϧⲉⲛ ⲡⲁⲓⲕⲟⲥⲙⲟⲥ : ⲉⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡⲓϣⲗⲏⲗ : ⲛⲧⲉ ϯⲁⲅⲓⲁ ⲙⲁⲣⲓⲁ Ϯⲡⲁⲣⲑⲉⲛⲟⲥ.",
+                    ],
+                    arabic: [
+                        "يا ربُّ إرحَم.",
+                        "تعالوا فلنسجد : للثالوث القدوس : الذي هو الأب والإبن : والروح القدس.",
+                        "نحن الشعوب : المسيحيين : لأن هذا هو إلهنا : الحقيقي.",
+                        "لنا رجاء : في القديسة مريم : الله يرحمنا : بشفاعاتها.",
+                        "كل هدوء : في العالم : من قبل صلاة : القديسة مريم العذراء.",
+                    ]
+                },
+                {
+                    name: "03 Second Hoos and Marenouonh",
+                    displayName: "Second Hoos and Marenouonh",
+                    english: [
+                        "Hail to you O Mary : the beautiful dove : who gave birth to : God the Word.",
+                        "Hail to you O Mary : with a holy hail : hail to you O Mary : the Mother of the Holy One.",
+                    ],
+                    coptic: [
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲙⲁⲣⲓⲁ : ϯϭⲣⲟⲙⲡⲓ ⲉⲑⲛⲉⲥⲱⲥ : ⲑⲏⲉⲧⲁⲥⲙⲓⲥⲓ ⲛⲁⲛ : ⲙⲫⲛⲟⲩϯ ⲡⲓⲗⲟⲅⲟⲥ.",
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲙⲁⲣⲓⲁ : ϧⲉⲛ ⲟⲩⲭⲉⲣⲉ ⲉϥⲟⲩⲁⲃ : ⲭⲉⲣⲉ ⲛⲉ ⲙⲁⲣⲓⲁ : ⲑⲙⲁⲩ ⲙⲫⲏⲉⲑⲟⲩⲁⲃ.",
+                    ],
+                    arabic: [
+                        "السلام لك يا مريم : الحمامة الحسنة : التي ولدت لناا : لله الكلمة.",
+                        "لسلام لك يا مريم : سلاماً مقدساً : السلام لك يا مريم : أم القدوس.",
+                    ],
+                },
+                {
+                    name: "04 Third Hoos",
+                    displayName: "Third Hoos",
+                    english: [
+                        "Hail to you O martyrs : hail to the courageous heroes : hail to the struggle-mantled : my lord prince George : Philopater Mercurius : the saint Abba Mina.",
+                    ],
+                    coptic: [
+                        "ⲭⲉⲣⲉ ⲛⲱⲧⲉⲛ ⲱ ⲛⲓⲙⲁⲣⲧⲩⲣⲟⲥ : ⲭⲉⲣⲉ ⲛⲓϣⲱⲓϫ ⲛⲅⲉⲛⲛⲉⲟⲥ : ⲭⲉⲣⲉ ⲛⲓⲁⲑⲗⲟϥⲟⲣⲟⲥ : ⲡⲁϭⲟⲓⲥ ⲡⲟⲩⲣⲟ ⲅⲉⲱⲣⲅⲓⲟⲥ : ⲫⲓⲗⲟⲡⲁⲧⲏⲣ ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ : ⲡⲓⲁⲅⲓⲟⲥ ⲁⲃⲃⲁ ⲙⲏⲛⲁ.",
+                    ],
+                    arabic: [
+                        "السلام لكم أيها الشهداء : السلام للشجعان الأبطال : السلام للمجاهدين : سيدي الملك جيؤرجيوس : مرقوريوس محب الآب : القديس أبا مينا.",
+                    ],
+                },
+                {
+                    name: "05 Aripsaleen and Tenoweh Ensok",
+                    displayName: "Aripsaleen and Tenoweh Ensok",
+                    english: [
+                        "Through the intercessions : of the Theotokos Saint Mary : O Lord grant us : the forgiveness of our sins.",
+                        "That we may praise You : with Your good Father : and the Holy Spirit : for You have come and saved us. Have mercy upon us.",
+                    ],
+                    coptic: [
+                        "ϩⲓⲧⲉⲛ ⲛⲓⲡⲣⲉⲥⲃⲓⲁ : ⲛⲧⲉ Ϯⲑⲉⲟⲧⲟⲕⲟⲥ ⲉⲑⲟⲩⲁⲃ ⲙⲁⲣⲓⲁ : ⲡϭⲟⲓⲥ ⲁⲣⲓϩⲙⲟⲧ ⲛⲁⲛ : ⲙⲡⲓⲭⲱ ⲉⲃⲟⲗ ⲛⲧⲉ ⲛⲉⲛⲛⲟⲃⲓ.",
+                        "ⲉⲑⲣⲉⲛϩⲱⲥ ⲉⲣⲟⲕ : ⲛⲉⲙ ⲡⲉⲕⲓⲱⲧ ⲛⲁⲅⲁⲑⲟⲥ : ⲛⲉⲙ ⲡⲓⲡⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ : ϫⲉ ⲁⲕⲓ ⲁⲕⲥⲱϯ ⲙⲙⲟⲛ ⲛⲁⲓ ⲛⲁⲛ.",
+                    ],
+                    arabic: [
+                        "بشفاعات والدة الإله : القديسة مريم : يا رب أنعم لنا : بمغفرة خطايانا.",
+                        "لكي نُسبِّحك : مع أبيك الصالح : والروح القدس لأنك : أتيت وخلَّصتنا. إرحمنا.",
+                    ],
+                },
+                {
+                    name: "06 Commemoration of the Saints and Doxologies",
+                    displayName: "Commemoration of the Saints and Doxologies",
+                    english: [
+                        "Pray for our fathers and brethren who have fallen asleep and reposed in the faith of Christ since the beginning; our holy fathers, the archbishops, our fathers the bishops, our fathers the hegumens, our fathers the priests, our brethren the deacons, our fathers the monks, and our fathers the laymen, and for the full repose of Christians. That Christ our God may repose all their souls in the paradise of joy, and we too, accord mercy unto us, and forgive us our sins.",
+                        "Lord have mercy",
+                    ],
+                    coptic: [
+                        "ⲧⲱⲃϩ ⲉϫⲉⲛ ⲛⲉⲛⲓⲟϯ ⲛⲉⲙ ⲛⲉⲛⲥⲛⲏⲟⲩ ⲉⲧⲁⲩⲉⲛⲕⲟⲧ : ⲁⲩⲙⲧⲟⲛ ⲙⲙⲱⲟⲩ ϧⲉⲛ ⲫⲛⲁϩϯ ⲙⲡⲓⲭⲣⲓⲥⲧⲟⲥ ⲓⲥϫⲉⲛ ⲡⲉⲛⲉϩ : ⲛⲉⲛⲓⲟϯ ⲉⲑⲟⲩⲁⲃ ⲛⲁⲣⲭⲏⲉⲡⲓⲥⲕⲟⲡⲟⲥ ⲕⲉ ⲛⲉⲛⲓⲟϯ ⲛⲉⲡⲓⲥⲕⲟⲡⲟⲥ : ⲛⲉⲛⲓⲟϯ ⲛϩⲏⲅⲟⲩⲙⲉⲛⲟⲥ ⲕⲉ ⲛⲉⲛⲓⲟϯ ⲙⲡⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ ⲛⲉⲙ ⲛⲉⲛⲥⲛⲏⲟⲩ ⲛⲇⲓⲁⲕⲱⲛ : ⲛⲉⲛⲓⲟϯ ⲙⲙⲟⲛⲁⲭⲟⲥ ⲕⲉ ⲛⲉⲛⲓⲟϯ ⲛⲗⲁⲓⲕⲟⲥ : ⲛⲉⲙ ⲉϩⲣⲏⲓ ⲉϫⲉⲛ ϯⲁⲛⲁⲡⲁⲩⲥⲓⲥ ⲧⲏⲣⲥ ⲛⲧⲉ ⲛⲓⲭⲣⲓⲥⲧⲓⲁⲛⲟⲥ : ϩⲓⲛⲁ ⲛⲧⲉ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ ⲡⲉⲛⲛⲟⲩϯ ϯⲙⲧⲟⲛ ⲛⲛⲟⲩⲯⲩⲭⲏ ⲧⲏⲣⲟⲩ ϧⲉⲛ ⲡⲓⲡⲁⲣⲁⲇⲓⲥⲟⲥ ⲛⲧⲉ ⲡⲟⲩⲛⲟϥ : ⲁⲛⲟⲛ ⲇⲉ ϩⲱⲛ ⲛⲧⲉϥⲉⲣⲡⲓⲛⲁⲓ ⲛⲉⲙⲁⲛ ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                        "ⲕⲩⲣⲓⲉ ⲉⲗⲉⲏⲥⲟⲛ",
+                    ],
+                    arabic: [
+                        "اطلبوا عن آبائنا وإخوتنا الذين رقدوا، وتنيحوا في الإيمان بالمسيح منذ البدء. آبائنا القديسين رؤساء الأساقفة، وآبائنا الأساقفة، وآبائنا القمامصة، وآبائنا القسوس وإخوتنا الشمامسة، وآبائنا الرهبان، وآبائنا العلمانيين، وعن نياح كل المسيحيين. لكي المسيح إلهنا ينيح نفوسهم أجمعين في فردوس النعيم، ونحن أيضاً يصنع معنا رحمةً، ويغفر لنا خطايانا.",
+                        "يا ربُّ إرحَم.",
+                    ],
+                },
+                {
+                    name: "07 Fourth Hoos",
+                    displayName: "Fourth Hoos",
+                    english: [
+                        "Pray for those who provide for the sacrifices, offerings, first-fruits, oil, incense, coverings, reading books, and altar vessels. Ⲧhat Christ our God may reward them in the heavenly Jerusalem, and forgive us our sins.",
+                        "Lord have mercy",
+                    ],
+                    coptic: [
+                        "ⲧⲱⲃϩ ⲉϫⲉⲛ ⲛⲏⲉⲧϥⲓ ⲙⲫⲣⲱⲟⲩϣ : ⲛⲛⲓⲑⲩⲥⲓⲁ ⲛⲓⲡⲣⲟⲥⲫⲟⲣⲁ ⲛⲓⲁⲡⲁⲣⲭⲏ ⲛⲓⲛⲉϩ ⲛⲓⲥⲑⲟⲓⲛⲟⲩϥⲓ : ⲛⲓⲥⲕⲉⲡⲁⲥⲙⲁ ⲛⲓϫⲱⲙ ⲛⲱϣ ⲛⲓⲕⲩⲙⲓⲗⲗⲓⲟⲛ ⲛⲧⲉ ⲡⲓⲙⲁⲛⲉⲣϣⲱⲟⲩϣⲓ : ϩⲓⲛⲁ ⲛⲧⲉ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ ⲡⲉⲛⲛⲟⲩϯ ϯϣⲉⲃⲓⲱ ⲛⲱⲟⲩ : ϧⲉⲛ ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲛⲧⲉ ⲧⲫⲉ ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                        "ⲕⲩⲣⲓⲉ ⲉⲗⲉⲏⲥⲟⲛ",
+                    ],
+                    arabic: [
+                        "اطلبوا عن المهتمين بالصعائد، والقرابين، والبكور، والزيت، والبخور، والستور، وكتب القراءة، وأواني المذبح. لكي المسيح إلهنا يكافئهم في أورشليم السمائية، ويغفر لنا خطايانا.",
+                        "يا ربُّ إرحَم.",
+                    ],
+                },
+                {
+                    name: "08 The Psalis",
+                    displayName: "The Psalis",
+                    english: [
+                        "In Christ Jesus our Lord. Amen Alleluia. Hail to you we ask you, O saint full of glory, the ever-Virgin, the Theotokos, Mother of Christ.",
+                        "Lift up our prayers, to your beloved Son, that He may forgive us our sins.",
+                        "Hail to the holy Virgin, who has brought forth unto us the true Light, Christ our God.",
+                        "Ask the Lord on our behalf, that He may have mercy on our souls, and forgive us our sins.",
+                        "O Virgin Mary, the holy Theotokos, the faithful advocate for all mankind.",
+                        "Intercede on our behalf, before Christ whom you bore, that He may grant us the forgiveness of our sins.",
+                        "Hail to you O Virgin : the right and true Queen : hail to the pride of our race : who bore to us Emmanuel.",
+                        "We ask you to remember us : O our faithful advocate : before our Lord Jesus Christ : that He may forgive us our sins.",
+                    ],
+                    coptic: [
+                        "ϧⲉⲛ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲉⲛϭⲟⲓⲥ ⲁⲙⲏⲛ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ : ⲭⲉⲣⲉ ⲛⲉ ⲧⲉⲛϯϩⲟ ⲉⲣⲟ : ⲱ : ⲑⲏⲉⲑⲟⲩⲁⲃ ⲉⲑⲙⲉϩ ⲛⲱⲟⲩ : ⲉⲧⲟⲓ ⲙⲡⲁⲣⲑⲉⲛⲟⲥ ⲛⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ : ϯⲙⲁⲥⲛⲟⲩϯ ⲑⲙⲁⲩ ⲙⲡⲓⲭⲣⲓⲥⲧⲟⲥ.",
+                        "ⲁⲛⲓⲟⲩⲓ ⲛⲧⲉⲛⲡⲣⲟⲥⲉⲩⲭⲏ : ⲉⲡϣⲱⲓ : ϩⲁ ⲡⲉϣⲏⲣⲓ ⲙⲙⲉⲛⲣⲓⲧ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                        "ⲭⲉⲣⲉ ⲑⲏⲉⲧⲁⲥⲙⲓⲥⲓ ⲛⲁⲛ : ⲙⲡⲓⲟⲩⲱⲓⲛⲓ ⲛⲧⲁⲫⲙⲏⲓ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ ⲡⲉⲛⲛⲟⲩϯ : ϯⲡⲁⲣⲑⲉⲛⲟⲥ ⲉⲉⲑⲟⲩⲁⲃ.",
+                        "ⲙⲁϯϩⲟ ⲙⲡϭⲟⲓⲥ : ⲉϩⲣⲏⲓ ⲉϫⲱⲛ : ⲛⲧⲉϥⲉⲣⲟⲩⲛⲁⲓ ⲛⲉⲙ ⲛⲉⲛⲯⲩⲭⲏ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                        "ϯⲡⲁⲣⲑⲉⲛⲟⲥ ⲙⲁⲣⲓⲁⲙ : ϯⲑⲉⲟⲧⲟⲕⲟⲥ ⲉⲑⲟⲩⲁⲃ : ϯⲡⲣⲟⲥⲧⲁⲧⲏⲥ ⲉⲧⲉⲛϩⲟⲧ : ⲛⲧⲉ ⲡⲅⲉⲛⲟⲥ ⲛⲧⲉ ϯⲙⲉⲧⲣⲱⲙⲓ.",
+                        "ⲁⲣⲓⲡⲣⲉⲥⲃⲉⲩⲓⲛ ⲉϩⲣⲏⲓ ⲉϫⲱⲛ : ⲛⲁϩⲣⲉⲛ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲫⲏⲉⲧⲁⲣⲉϫⲫⲟϥ ϩⲟⲡⲱⲥ ⲛⲧⲉϥⲉⲣϩⲙⲟⲧ ⲛⲁⲛ : ⲙⲡⲓⲭⲱ ⲉⲃⲟⲗ ⲛⲧⲉ ⲛⲉⲛⲛⲟⲃⲓ.",
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲱ ϯⲡⲁⲣⲑⲉⲛⲟⲥ : ϯⲟⲩⲣⲱ ⲙⲙⲏⲓ ⲛⲁⲗⲏⲑⲓⲛⲏ : ⲭⲉⲣⲉ ⲡϣⲟⲩϣⲟⲩ ⲛⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ : ⲁⲣⲉϫⲫⲟ ⲛⲁⲛ ⲛⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                        "ⲧⲉⲛϯϩⲟ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ : ⲱ ϯⲡⲣⲟⲥⲧⲁⲧⲏⲥ ⲉⲧⲉⲛϩⲟⲧ : ⲛⲁϩⲣⲉⲛ ⲡⲉⲛϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                    ],
+                    arabic: [
+                        "بالمسيح يسوع المسيح. السلام لك نسألك أيتها القديسة الممتلئة مجدا العذراء كل حين. والدة الاله أم المسيح.",
+                        "اصعدى صلاتنا الى ابنك الحبيب ليغفر لنا خطايانا.",
+                        "السلام للتى ولدت لنا النور الحقيقى المسيح الهنا العذراء القديسة.",
+                        "اسألى الرب عنا ليصنع رحمة مع نفوسنا ويغفر لنا خطايانا.",
+                        "أيتها العذراء مريم والدة الاله القديسة الشفيعة الأمينة لجنس البشر.",
+                        "شفعى فينا أمام المسيح الذى ولدته لكى ينعم لنا بمغفرة خطايانا.",
+                        "السلام لك أيتها العذراء : الملكة الحقيقية الحقانية : السلام لفخر جنسنا : ولدت لنا عمانوئيل.",
+                        "نسألك أن تذكرينا : أيتها الشفيعة المؤتمنة : أمام ربنا يسوع المسيح : ليغفر لنا خطايانا.",
+                    ],
+                },
+                {
+                    name: "09 Theotokias 1-6",
+                    displayName: "Theotokias 1-6",
+                    english: [
+                        "The adornment of Mary : in the highest heaven : at the right hand of her Beloved : entreating Him on our behalf.",
+                        "As David has said : in the book of Psalms : The Queen stood at : Your right hand O King.",
+                        "Solomon has called her : in the Song of Songs : My sister and my spouse : my true city Jerusalem.",
+                        "For He has given a symbol of her : in many high names : saying come out of your garden : O choicest aroma.",
+                        "Hail to you O Virgin : the right and true Queen : hail to the pride of our race : who bore to us Emmanuel.",
+                        "We ask you to remember us : O our faithful advocate : before our Lord Jesus Christ : that He may forgive us our sins.",
+                    ],
+                    coptic: [
+                        "ⲉⲣⲉ ⲡⲥⲟⲗⲥⲉⲗ ⲙⲙⲁⲣⲓⲁⲙ : ϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ ⲉⲧⲥⲁⲡϣⲱⲓ : ⲥⲁⲟⲩⲓⲛⲁⲙ ⲙⲡⲉⲥⲙⲉⲛⲣⲓⲧ : ⲉⲥⲧⲱⲃϩ ⲙⲙⲟϥ ⲉϩⲣⲏⲓ ⲉϫⲱⲛ.",
+                        "ⲕⲁⲧⲁ ⲫⲣⲏϯ ⲉⲧⲁϥϫⲟⲥ : ⲛϫⲉ ⲇⲁⲩⲓⲇ ϧⲉⲛ ⲡⲓⲯⲁⲗⲙⲟⲥ : ϫⲉ ⲁⲥⲟϩⲓ ⲉⲣⲁⲧⲥ ⲛϫⲉ ϯⲟⲩⲣⲱ : ⲥⲁⲟⲩⲓⲛⲁⲙ ⲙⲙⲟⲕ ⲡⲟⲩⲣⲟ.",
+                        "ⲥⲟⲗⲟⲙⲱⲛ ⲙⲟⲩϯ ⲉⲣⲟⲥ : ϧⲉⲛ ⲡⲓϫⲱ ⲛⲧⲉ ⲛⲓϫⲱ : ϫⲉ ⲧⲁⲥⲱⲛⲓ ⲟⲩⲟϩ ⲧⲁϣⲫⲉⲣⲓ : ⲧⲁⲡⲟⲗⲓⲥ ⲙⲙⲏⲓ ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ.",
+                        "ⲁϥϯⲙⲏⲓⲛⲓ ⲅⲁⲣ ⲉⲣⲟⲥ : ϧⲉⲛ ϩⲁⲛⲙⲏϣ ⲛ̀ⲣⲁⲛ ⲉⲩϭⲟⲥⲓ : ϫⲉ ⲁⲙⲏ ⲉⲃⲟⲗϧⲉⲛ ⲡⲉⲕⲏⲡⲟⲥ : ⲱ ⲑⲏⲉⲧⲥⲱⲧⲡ ⲛⲁⲣⲱⲙⲁⲧⲁ.",
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲱ ϯⲡⲁⲣⲑⲉⲛⲟⲥ : ϯⲟⲩⲣⲱ ⲙⲙⲏⲓ ⲛⲁⲗⲏⲑⲓⲛⲏ : ⲭⲉⲣⲉ ⲡϣⲟⲩϣⲟⲩ ⲛⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ : ⲁⲣⲉϫⲫⲟ ⲛⲁⲛ ⲛⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                        "ⲧⲉⲛϯϩⲟ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ : ⲱ ϯⲡⲣⲟⲥⲧⲁⲧⲏⲥ ⲉⲧⲉⲛϩⲟⲧ : ⲛⲁϩⲣⲉⲛ ⲡⲉⲛϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                    ],
+                    arabic: [
+                        "زينة مريم : فى السموات العلوية : عن يمين حبيبها : تطلب منه عنا.",
+                        "كما قال : داود فى المزمور : قامت الملكة : عن يمينك أيها الملك.",
+                        "سليمان دعاها : فى نشيد الأنشاد : وقال أختى صديقتى : مدينتى الحقيقية أورشليم.",
+                        "لأنه أعطى علامة عنها : بأسماء كثيرة عالية : قائلا أخرجى من بستانك : أيتها العنبر المختار.",
+                        "السلام لك أيتها العذراء : الملكة الحقيقية الحقانية : السلام لفخر جنسنا : ولدت لنا عمانوئيل.",
+                        "نسألك أن تذكرينا : أيتها الشفيعة المؤتمنة : أمام ربنا يسوع المسيح : ليغفر لنا خطايانا.",
+                    ],
+                },
+                {
+                    name: "10 Shere Ne Maria",
+                    displayName: "Shere Ne Maria",
+                    english: [
+                        "Blessed are you O Mary : the wise and the chaste : the second tabernacle : the spiritual treasure.",
+                        "The pure turtle-dove : who declared in our land : and brought unto us : the Fruit of the Spirit.",
+                        "The Spirit of Comfort : who came upon your Son : in the waters of the Jordan : according to the type of Noah.",
+                        "For that dove : has declared unto us : the peace of God : toward mankind.",
+                        "Likewise you O our hope : the spiritual turtle-dove : have brought mercy unto us : carrying Him in your womb.",
+                        "He is Jesus : the begotten of the Father : He was born of you for us : setting free our race.",
+                        "Therefore let us declare : first with our hearts : then also with our tongues : proclaiming and saying.",
+                        "O our Lord Jesus Christ : make for Yourself within us : a temple of Your Holy Spirit : glorifying You.",
+                        "Hail to you O Virgin : the right and true Queen : hail to the pride of our race : who bore to us Emmanuel.",
+                        "We ask you to remember us : O our faithful advocate : before our Lord Jesus Christ : that He may forgive us our sins.",
+                    ],
+                    coptic: [
+                        "ⲱⲟⲩⲛⲓⲁϯ ⲛⲑⲟ ⲙⲁⲣⲓⲁ : ϯⲥⲁⲃⲉ ⲟⲩⲟϩ ⲛⲥⲉⲙⲛⲏ : ϯⲙⲁϩⲥⲛⲟⲩϯ ⲛⲥⲕⲏⲛⲏ : ⲡⲓⲁϩⲟ ⲙⲡⲛⲉⲩⲙⲁⲧⲓⲕⲟⲛ.",
+                        "Ϯϭⲣⲟⲙⲡϣⲁⲗ ⲛⲕⲁⲑⲁⲣⲟⲥ : ⲑⲏⲉⲧⲁⲥⲙⲟⲩϯ ϧⲉⲛ ⲡⲉⲛⲕⲁϩⲓ : ⲟⲩⲟϩ ⲁⲥⲫⲓⲣⲓ ⲛⲁⲛ ⲉⲃⲟⲗ : ⲛⲟⲩⲕⲁⲣⲡⲟⲥ ⲛ̀ⲧⲉ ⲡⲓⲡⲛⲉⲩⲙⲁ.",
+                        "ⲡⲓⲡⲛⲉⲩⲙⲁ ⲙⲡⲁⲣⲁⲕⲗⲏⲧⲟⲛ : ⲫⲏⲉⲧⲁϥⲓ ⲉϫⲉⲛ ⲡⲉϣⲏⲣⲓ : ϩⲓϫⲉⲛ ⲛⲓⲙⲱⲟⲩ ⲛⲧⲉ ⲡⲓⲓⲟⲣⲇⲁⲛⲏⲥ : ⲕⲁⲧⲁ ⲡⲧⲩⲡⲟⲥ ⲛⲛⲱⲉ.",
+                        "Ϯϭⲣⲟⲙⲡⲓ ⲅⲁⲣ ⲉⲧⲉ ⲙⲙⲁⲩ : ⲛⲑⲟⲥ ⲁⲥϩⲓϣⲉⲛⲛⲟⲩϥⲓ ⲛⲁⲛ : ⲛϯϩⲓⲣⲏⲛⲏ ⲛⲧⲉ ⲫϯ : ⲑⲏⲉⲧⲁⲥϣⲱⲡⲓ ϣⲁ ⲛⲓⲣⲱⲙⲓ.",
+                        "ⲛⲑⲟ ϩⲱⲓ ⲱ ⲧⲉⲛϩⲉⲗⲡⲓⲥ : ϯϭⲣⲟⲙⲡϣⲁⲗ ⲛⲛⲟⲏⲧⲉ : ⲁⲣⲉⲓⲛⲓ ⲙⲡⲓⲛⲁⲓ ⲛⲁⲛ : ⲁⲣⲉϥⲁⲓ ϧⲁⲣⲟϥ ϧⲉⲛ ⲧⲉⲛⲉϫⲓ.",
+                        "ⲉⲧⲉ ⲫⲁⲓ ⲡⲉ ⲓⲏⲥⲟⲩⲥ : ⲡⲓⲙⲓⲥⲓ ⲉⲃⲟⲗϧⲉⲛ ⲫⲓⲱⲧ : ⲁⲩⲙⲁⲥϥ ⲛⲁⲛ ⲉⲃⲟⲗ ⲛϧⲏϯ : ⲁϥⲉⲣ ⲡⲉⲛϫⲉⲛⲟⲥ ⲛⲣⲉⲙϩⲉ.",
+                        "ⲫⲁⲓ ⲅⲁⲣ ⲙⲁⲣⲉⲛⲧⲁⲟⲩⲟϥ : ⲉⲃⲟⲗϧⲉⲛ ⲡⲉⲛϩⲏⲧ ⲛϣⲟⲣⲡ : ⲙⲉⲛⲉⲛⲥⲱⲥ ⲟⲛ ϧⲉⲛ ⲡⲉⲛⲕⲉⲗⲁⲥ : ⲉⲛⲱϣ ⲉⲃⲟⲗ ⲉⲛϫⲱ ⲙⲙⲟⲥ.",
+                        "ϫⲉ ⲡⲉⲛϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲙⲁⲑⲁⲙⲓⲟ ⲛⲁⲕ ⲛϧⲣⲏⲓ ⲛϧⲏⲧⲉⲛ : ⲛⲟⲩⲉⲣⲫⲉⲓ ⲛⲧⲉ ⲡⲉⲕⲡⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ : ⲉⲩϯⲇⲟⲝⲟⲗⲟⲅⲓⲁ ⲛⲁⲕ.",
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲱ ϯⲡⲁⲣⲑⲉⲛⲟⲥ : ϯⲟⲩⲣⲱ ⲙⲙⲏⲓ ⲛⲁⲗⲏⲑⲓⲛⲏ : ⲭⲉⲣⲉ ⲡϣⲟⲩϣⲟⲩ ⲛⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ : ⲁⲣⲉϫⲫⲟ ⲛⲁⲛ ⲛⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                        "ⲧⲉⲛϯϩⲟ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ : ⲱ ϯⲡⲣⲟⲥⲧⲁⲧⲏⲥ ⲉⲧⲉⲛϩⲟⲧ : ⲛⲁϩⲣⲉⲛ ⲡⲉⲛϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                    ],
+                    arabic: [
+                        "طوباك أنت يا مريم : الحكيمة العفيفة : القبة الثانية : الكنز الروحى.",
+                        "اليمامة النقية : التى نادت فى أرضنا : وأينعت لنا : ثمرة الروح.",
+                        "لروح المعزى : الذى حل على ابنك : فى مياه الأردن : كمثال نوح.",
+                        "أن تلك الحمامة : هى بشرتنا : بسلام الله : الذى صار للبشر.",
+                        "وأنت أيضا يا رجاءنا : اليمامة العقلية : أتيت لنا بالرحمة : حملته فى بطنك.",
+                        "ى يسوع المولود : من الآب : ولد لنا منك : وحرر جنسنا.",
+                        "فلنقل هذا : من قلبنا : أولاً وبعد ذلك بلساننا : أيضا صارخين قائلين.",
+                        "ا ربنا يسوع المسيح : اجعل لك فينا هيكلاً : لروحك القدوس : يعطيك تمجيدا.",
+                        "السلام لك أيتها العذراء : الملكة الحقيقية الحقانية : السلام لفخر جنسنا : ولدت لنا عمانوئيل.",
+                        "سألك أن تذكرينا : أيتها الشفيعة المؤتمنة : أمام ربنا يسوع المسيح : ليغفر لنا خطايانا.",
+                    ],
+                },
+                {
+                    name: "11 Teoi Enhikanos and Nim Ghar",
+                    displayName: "Teoi Enhikanos and Nim Ghar",
+                    english: [
+                        "Watch over us : from on high where you dwell : O lady of us all : the ever-virgin theotokos.",
+                        "Ask of Him whom you have borne : our good Saviour : to take away our troubles : and grant us His peace.",
+                        "Hail to you O Virgin : the right and true Queen : hail to the pride of our race : who bore to us Emmanuel.",
+                        "We ask you to remember us : O our faithful advocate : before our Lord Jesus Christ : that He may forgive us our sins.",
+                    ],
+                    coptic: [
+                        "ϣⲱⲡⲓ ⲛⲑⲟ ⲉⲣⲉ ⲥⲟⲙⲥ ⲉϫⲱⲛ : ϧⲉⲛ ⲛⲓⲙⲁ ⲉⲧϭⲟⲥⲓ ⲉⲧⲁⲣⲉⲭⲏ ⲛϧⲏⲧⲟⲩ : ⲱ ⲧⲉⲛϭⲟⲓⲥ ⲛⲛⲏⲃ ⲧⲏⲣⲉⲛ ϯⲑⲉⲟⲧⲟⲕⲟⲥ : ⲉⲧⲟⲓ ⲙⲡⲁⲣⲑⲉⲛⲟⲥ ⲛⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ.",
+                        "ⲙⲁϯϩⲟ ⲙⲫⲏⲉⲧⲁⲣⲉⲙⲁⲥϥ : ⲡⲉⲛⲥⲱⲧⲏⲣ ⲛⲁⲅⲁⲑⲟⲥ : ⲛⲧⲉϥⲱⲗⲓ ⲛⲛⲁⲓϧⲓⲥⲓ ⲉⲃⲟⲗϩⲁⲣⲟⲛ : ⲛⲧⲉϥⲥⲉⲙⲛⲓ ⲛⲁⲛ ⲛⲧⲉϥϩⲓⲣⲏⲛⲏ.",
+                        "ⲭⲉⲣⲉ ⲛⲉ ⲱ ϯⲡⲁⲣⲑⲉⲛⲟⲥ : ϯⲟⲩⲣⲱ ⲙⲙⲏⲓ ⲛⲁⲗⲏⲑⲓⲛⲏ : ⲭⲉⲣⲉ ⲡϣⲟⲩϣⲟⲩ ⲛⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ : ⲁⲣⲉϫⲫⲟ ⲛⲁⲛ ⲛⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                        "ⲧⲉⲛϯϩⲟ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ : ⲱ ϯⲡⲣⲟⲥⲧⲁⲧⲏⲥ ⲉⲧⲉⲛϩⲟⲧ : ⲛⲁϩⲣⲉⲛ ⲡⲉⲛϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ ⲡⲓⲭⲣⲓⲥⲧⲟⲥ : ⲛⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉⲃⲟⲗ.",
+                    ],
+                    arabic: [
+                        "كونى أنتِ ناظرة علينا : فى المواضع العالية التى أنتِ كائنة فيها : يا سيدتنا كلنا : والدة الإله العذراء كل حين.",
+                        "سألى الذى ولدته : مخلصنا الصالح : أن يرفع عنا هذه الأتعاب : ويقرر لنا سلامه.",
+                        "السلام لك أيتها العذراء : الملكة الحقيقية الحقانية : السلام لفخر جنسنا : ولدت لنا عمانوئيل.",
+                        "نسألك أن تذكرينا : أيتها الشفيعة المؤتمنة : أمام ربنا يسوع المسيح : ليغفر لنا خطايانا.",
+                    ],
+                },
+                {
+                    name: "12 Neknai O Panouti and Conclusion",
+                    displayName: "Neknai O Panouti and Conclusion",
+                    english: [
+                        "A Psalm of David. Alleluia.",
+                        "Great things were said about you : O city of God : and the highest is the One who made her forever : For all of the joyful have dwelt in you. Alleluia.",
+                        "Hear O daughter, and see and incline your ear : Forget your own people also, and your father’s house : Because the King has desired your beauty : For He is your Lord. Alleluia.",
+                    ],
+                    coptic: [
+                        "ⲯⲁⲗⲙⲟⲥ ⲧⲱ ⲇⲁⲩⲓⲇ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ.",
+                        "ϫⲉ ⲁⲩⲥⲁϫⲓ ⲉⲑⲃⲏϯ ⲛϩⲁⲛϩⲃⲏⲟⲩⲓ ⲉⲩⲧⲁⲓⲏⲟⲩⲧ : ϯⲃⲁⲕⲓ ⲛⲧⲉ ⲫⲛⲟⲩϯ : ⲛⲑⲟϥ ⲡⲉⲧϭⲟⲥⲓ ⲁϥϩⲓⲥⲉⲛϯ ⲙⲙⲟⲥ ϣⲁ ⲉⲛⲉϩ : ⲓⲥϫⲉ ⲁⲣⲉ ⲫⲙⲁⲛϣⲱⲡⲓ ⲛⲧⲉ ⲛⲏⲉⲧⲟⲩⲛⲟϥ ⲧⲏⲣⲟⲩ ⲛϧⲏϯ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ.",
+                        "ⲥⲱⲧⲉⲙ ⲧⲁϣⲉⲣⲓ ⲁⲛⲁⲩ ⲣⲉⲕ ⲡⲉⲙⲁϣϫ : ⲁⲣⲓⲡⲱⲃϣ ⲙⲡⲉⲗⲁⲟⲥ ⲛⲉⲙ ⲡⲏⲓ ⲧⲏⲣϥ ⲛⲧⲉ ⲡⲉⲓⲱⲧ : ϫⲉ ⲁ ⲡⲓⲟⲩⲣⲟ ⲉⲣⲉ ⲡⲓⲑⲩⲙⲓⲛ ⲉⲡⲉⲥⲁⲓ : ϫⲉ ⲟⲩⲏⲓ ⲛⲑⲟϥ ⲡⲉ ⲡⲉϭⲟⲓⲥ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ.",
+                    ],
+                    arabic: [
+                        "مزمور لداود. هلليلويا.",
+                        "أعمال مجيدة قد قيلت لأجلك : يا مدينة الله : وهو العلي الذي أسسها إلي الأبد : لأن سكني الفرحين جميعهم فيكِ. هلليلويا.",
+                        "إسمعي يا إبنتي وانظري وأميلي سمعكِ : وإنسي شعبَكِ وبيتَ أبيكِ : فإنَّ الملكَ قدِ إشتهى حسنَكِ : لِأنهُ هو ربُّك. هلليلويا.",
+                    ],
+                },
+            ];
+
+            // Check if playing
+            let isPlaying = false;
+
+            // Update DOM
+            function loadSong(song) {
+                title.textContent = song.displayName;
+                // for (let i = 0; i < 11; i++) {
+                    // const index = i + 1;
+                englishLyrics = document.getElementById(`englishLyrics`);
+                    // copticLyrics = document.getElementById(`copticLyrics`);
+                arabicLyrics = document.getElementById(`arabicLyrics`);
+                    
+                    // englishLyrics.textContent = song.english[i];
+                    // copticLyrics.textContent = song.coptic[i];
+                    // arabicLyrics.textContent = song.arabic[i];
+                // }
+                // artist.textContent = song.artist;
+                music.src = `Live Recordings/Live Sunday Midnight Praises/${song.name}.m4a`;
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            function selectSong(index) {
+                // Set the song index to the selected index
+                songIndex = index;
+                // Load and play the selected song
+                loadSong(songs[songIndex]);
+                playSong();
+            }
+
+            // On load: Select first song
+            let songIndex = 0;
+            loadSong(songs[songIndex]);
+            pauseSong();
+
+            // Set Song Duration when it's possible to play a song
+            function setSongDuration(e) {
+                const totalSeconds = Math.floor(e.target.duration);
+                const durationMinutes = Math.floor(totalSeconds / 60);
+                let durationSeconds = totalSeconds % 60;
+                if (durationSeconds < 10) {
+                    durationSeconds = `0${durationSeconds}`;
+                }
+                durationEle.textContent = `${durationMinutes}:${durationSeconds}`;
+            }
+
+            // Play
+            function playSong() {
+                isPlaying = true;
+                playBtn.classList.replace("fa-play", "fa-pause");
+                playBtn.setAttribute("title", "Pause");
+                music.play();
+            }
+
+            // Pause
+            function pauseSong() {
+                isPlaying = false;
+                playBtn.classList.replace("fa-pause", "fa-play");
+                playBtn.setAttribute("title", "Play");
+                music.pause();
+            }
+
+            // Previous Song
+            function prevSong() {
+                songIndex--;
+                if (songIndex < 0) {
+                    songIndex = songs.length - 1;
+                }
+                loadSong(songs[songIndex]);
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            // Next Song
+            function nextSong() {
+                songIndex++;
+                if (songIndex > songs.length - 1) {
+                    songIndex = 0;
+                }
+                loadSong(songs[songIndex]);
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            // Display progress bar width and calculate display for current time function
+            function barWidthAndCurrentTime() {
+                const { duration, currentTime } = music;
+                // Update progress bar width
+                const progressPercent = (currentTime / duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                // Calculate display for current time
+                const currentMinutes = Math.floor(currentTime / 60);
+                let currentSeconds = Math.floor(currentTime % 60);
+                if (currentSeconds < 10) {
+                    currentSeconds = `0${currentSeconds}`;
+                }
+                currentTimeEle.textContent = `${currentMinutes}:${currentSeconds}`;
+            }
+
+            // Update Progress Bar & Time while playing
+            function updateProgressBar() {
+                if (isPlaying) {
+                    barWidthAndCurrentTime();
+                }
+            }
+
+            // Set Progress Bar and current time if and if not playing when user clicks on progress bar
+            function setProgressBar(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                const { duration } = music;
+                music.currentTime = (clickX / width) * duration;
+                if (!isPlaying) {
+                    barWidthAndCurrentTime();
+                }
+            }
+
+            // Event Listeners
+            music.addEventListener("canplay", setSongDuration);
+            playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
+            prevBtn.addEventListener("click", prevSong);
+            nextBtn.addEventListener("click", nextSong);
+            music.addEventListener("timeupdate", updateProgressBar);
+            music.addEventListener("ended", nextSong);
+            progressContainer.addEventListener("click", setProgressBar);
+        </script>
+        </html>                 
+    </section>
+
+    <!-- Credits -->
+
+    <p class="credits">Created by Pierre Kostantine</p>
+
+    <!-- Scripts -->
+
+    <script src="Functions.js"></script>
+</body>
+</html>

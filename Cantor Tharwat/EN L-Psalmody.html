@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Live.css">
+    <link rel="stylesheet" href="Cantor Tharwat.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Live - Psalmody</title>
+</head>
+<body>
+    <!-- Cantor Tharwat المعلم ثروت -->
+
+    <!-- Header and Sidebar -->
+    <script src="Functions.js"></script>
+    <section>
+        <section class="logoband">
+            <img class="logo" src="Cantor Tharwat Logo 4.png" alt="" onclick="homeEN()">
+            <div class="container">
+                <img class="logos" src="Instagram Clear Logo.png" alt="" onclick="ig()">
+                <img class="logos" src="Facebook Clear Logo.png" alt="" onclick="fb()">
+                <img class="logos" src="Soundcloud Clear Logo.png" alt="" onclick="sc()">
+                <img class="logos" src="Youtube Clear Logo.png" alt="" onclick="yt()">
+                <img class="logos" src="Spotify Clear Logo.png" alt="" onclick="spotify()">
+                <img class="logos" src="Apple Music Clear Logo.png" alt="" onclick="apple()">
+                <p class="contact">Email: vmsachorus@gmail.com</p>
+            </div>
+        </section>
+        <section class="buttonband">
+            <div>
+                <button class="menubuttons" onclick="homeEN()">Home</button>
+                <button class="menubuttons" onclick="liveEN()" style="color: white;">Live Recordings</button>
+                <button class="menubuttons" onclick="studioEN()">Studio Recordings</button>
+                <button class="menubuttons" onclick="lyricsEN()">Lyrics</button>
+                <button class="menubuttons" onclick="lessonsEN()">Lessons</button>
+                <button class="menubuttons" onclick="homeAR()">عربي</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Live Psalmody Page -->
+
+    <section class="embedplayer" style="padding: 6rem 1rem 4.2% 12.8rem;">
+        <button onclick="liveEN()" type="button" class="btn" style="position: absolute; padding: 0.1rem 0.5rem; font-size: 0.8rem; color: white;">‹ Back</button>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6zEWLlNlTqqRrP5xLsRo5f?utm_source=generator&theme=0" width="100.7%" height="80%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cantor Tharwat.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="Mobile.css">
+    <title>Lamentations of Jeremiah in Arabic (Live)</title>
+</head>
+<body>
+    <!-- Cantor Tharwat المعلم ثروت -->
+
+    <!-- Header and Sidebar -->
+    <section>
+        <section class="logoband">
+            <img class="logo" src="img/Cantor Tharwat Logo 4.png" alt="" onclick="homeEN()">
+            <div class="container">
+                <img class="logos" src="img/Instagram Clear Logo.png" alt="" onclick="ig()">
+                <img class="logos" src="img/Facebook Clear Logo.png" alt="" onclick="fb()">
+                <img class="logos" src="img/Soundcloud Clear Logo.png" alt="" onclick="sc()">
+                <img class="logos" src="img/Youtube Clear Logo.png" alt="" onclick="yt()">
+                <img class="logos" src="img/Spotify Clear Logo.png" alt="" onclick="spotify()">
+                <img class="logos" src="img/Apple Music Clear Logo.png" alt="" onclick="apple()">
+                <p class="contact">Email: cantortharwat.feedback@gmail.com</p>
+            </div>
+        </section>
+        <section class="menu">
+            <div>
+                <button class="menubuttons" onclick="homeEN()">Home</button>
+                <button class="menubuttons menu-current" onclick="liveEN()">Live Recordings</button>
+                <button class="menubuttons" onclick="studioEN()">Studio Recordings</button>
+                <button class="menubuttons unreleased">Lyrics</button>
+                <button class="menubuttons unreleased">Lessons</button>
+                <button class="menubuttons unreleased">عربي</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Live Incense Page -->
+    
+    <section class="player">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Music Player</title>
+            <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+            <link rel="stylesheet" href="Player.css">
+        </head>
+        <body>
+            <div class="player-container lyrics-container">
+                <span onclick="liveEN()" class="back-button"><i class="material-icons">chevron_left</i></span>
+                <span id="showLyricsBtn" class="material-symbols-outlined open-full-icon">open_in_full</span>
+                <span id="closeLyricsBtn" class="material-symbols-outlined open-full-icon" style="display: none;">close_fullscreen</span>
+                <h1 class="player-lyrics-title">Lyrics</h1>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" style=" width: 23rem; margin: 1rem; z-index: 11; position: relative;">
+                    <input type="checkbox" checked class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck1" id="englishBtn">English</label>
+                  
+                    <input type="checkbox" checked class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck2" id="copticBtn">English-Arabic</label>
+                  
+                    <input type="checkbox" checked class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-black" for="btncheck3" id="arabicBtn">Arabic</label>
+                </div>
+                <table class="table-lang"></table>
+            </div>
+            <div class="player-container">
+                <!-- Song -->
+                <div class="img-container">
+                    <img src="img/Lamentations of Jeremiah in Arabic.png" alt="Album Art">
+                </div>
+                <h2 id="title"></h2>
+                <audio src=""></audio>
+                <!-- Progress -->
+                <div class="progress-n-controls">
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress" id="progress"></div>
+                        <div class="duration-wrapper">
+                            <span id="current-time">0:00</span>
+                            <span id="duration"></span>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <div class="player-controls" style="z-index: 13;">
+                        <i class="fas fa-backward" id="prev" title="Previous"></i>
+                        <i class="fas fa-play main-button" id="play" title="Play"></i>
+                        <i class="fa-forward fas unused" id="next" title="Next"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="player-container temp-container hidden"></div>
+        </body>
+        <script>
+            const image = document.querySelector("img");
+            const title = document.getElementById("title");
+            const artist = document.getElementById("artist");
+            const music = document.querySelector("audio");
+            const progressContainer = document.getElementById("progress-container");
+            const progress = document.getElementById("progress");
+            const currentTimeEle = document.getElementById("current-time");
+            const durationEle = document.getElementById("duration");
+            const prevBtn = document.getElementById("prev");
+            const playBtn = document.getElementById("play");
+            const nextBtn = document.getElementById("next");
+            const table = document.querySelector('.table-lang');
+
+            for (let i = 1; i <= 24; i++) {
+                const row = document.createElement('tr');
+
+                const englishCell = document.createElement('td');
+                englishCell.className = 'lyrics-cell english-lyrics';
+                englishCell.id = `englishLyrics${i}`;
+                row.appendChild(englishCell);
+
+                const copticCell = document.createElement('td');
+                copticCell.className = 'lyrics-cell coptic-lyrics';
+                copticCell.id = `copticLyrics${i}`;
+                row.appendChild(copticCell);
+
+                const arabicCell = document.createElement('td');
+                arabicCell.className = 'lyrics-cell arabic-lyrics';
+                arabicCell.id = `arabicLyrics${i}`;
+                row.appendChild(arabicCell);
+
+                table.appendChild(row);
+            }
+
+            // Music
+            const songs = [
+                {
+                    displayName: "Lamentations of Jeremiah in Arabic",
+                    english: [
+                        "From the Lamentations of Jeremiah the prophet, may his blessings be with us all.",
+                        "I am the man who has sees poverty by the rod of His anger upon me. He took me and led me away into darkness, and not into light. Surely He has turned His hand against me throughout the day. He has aged my flesh and my skin, and broken my bones.",
+                        "He has besieged me and surrounded my head; He has worn me down with hardships. He has set me in dark places as those long dead.",
+                        "He has hedged me in, and I cannot come forth; He made my brazen chain heavy. Though I will call and cry out, He shuts out my prayer. He has blocked my ways and obstructed my paths; He has troubled me.",
+                        "He is a bear lying in wait for me like a lion in a hidden place. After I departed, He eagerly pursued and caught me. He has utterly ruined me.",
+                        "He bent His bow and set me up as a target for the arrow. He has caused the arrows of His quiver to pierce my loins. I became a laughingstock to all my people, and their song all the day. He has filled me with bitterness and drenched me with gall.",
+                        "He also broke my teeth with gravel and fed me with ashes. He took away peace from my soul, and I have forgotten the good things. Therefore I said, my victory and my hope have perished from the Lord.",
+                        "I remembered by reason of my poverty, and because of my persecution, I remembered my bitterness and gall. My soul shall remember and meditate within me. I will fix this in my heart; therefore I will endure.",
+                        "It is through the mercies of the Lord that He has not failed me, because His compassions are not exhausted. Pity us, O Lord, early every month: for we are not brought to an end, because His compassions are not exhausted. They are new every morning; great is Your faithfulness. The Lord is my portion, says my soul; therefore I will wait for Him.",
+                        "The Lord is good to those who wait for Him, To the soul who will seek Him, the Good One. He will wait for and quietly expect the salvation of the Lord. It is good for a man when he takes up a yoke in his youth.",
+                        "He will sit alone and be silent, because he bears it on himself. He will give his cheek to the one who strikes him, and he will be filled with insults. Yet the Lord shall not reject him forever.",
+                        "For He who humbles will have compassion according to the abundance of His mercy. For He does not afflict willingly, though He humbles the children of men.",
+                        "To humble all the prisoners of the earth under His feet, To turn aside the judgment of a man before the face of the Most High, and to condemn a man before he is judged, the Lord does not command.",
+                        "Who thus speaks, and it comes to pass? The Lord has not commanded it, For evil and good shall not proceed from the mouth of the Most High. Why should a living man complain, a man concerning his sin?",
+                        "Our way has been searched out and examined; therefore we shall turn to the Lord. Let us lift our hearts and our hands to the Most High in heaven. We have sinned and acted in an ungodly way; thus You have not shown us mercy.",
+                        "But You visited us in anger and drove us away. You have put us to death and not spared us. You veiled Yourself with a cloud because of our prayer. To close my eyes and to reject me.",
+                        "You have placed us in the midst of the peoples. All our enemies have opened their mouth against us. Fear and anger have come upon us, Yes, devastation and destruction. My eyes will shed tears for forgiveness because of the destruction of the daughter of my people.",
+                        "My eyes are drowned with tears, and I will not keep silent; so there shall be no rest, until the Lord bends down and sees from heaven. My eyes will bring suffering in my soul because of all the daughters of the city.",
+                        "My enemies hunted me down without cause, like a sparrow. They put my life to death in the pit and threw a stone at me. Water flowed over my head; I said, I am rejected.",
+                        "I called on Your name, O Lord, from the lowest pit. You heard my voice; do not hide Your ears from my supplication. You drew near at my call on the day I called upon You. You said to me, Do not fear.",
+                        "O Lord, You pleaded the case for my soul; You redeemed my life. O Lord, You saw my troubles; You judged my cause. You saw all their vengeance in all their reasoning against me.",
+                        "You heard their taunts and all their plots against me, And the lips of those who rose up against me, and their meditations against me all the day.",
+                        "Look at their eyes as they sit down and rise up. You shall render a recompense to them, O Lord, according to the works of their hands. You shall repay them as a covering Your hardship for them. You shall pursue them in Your wrath and utterly destroy them from under heaven, O Lord.",
+                        "Glory be to the Holy Trinity our God forever. Amen.",
+                    ],
+                    coptic: [
+                        "Men marathi ermeya alnabee : barakatohoo 3ala gamee3ena.",
+                        "Ana howa alragol olazee ra2ah almazala : 2ati 3aleya be kadeebee ghadabeh : wa kadanee wa sayaranee fel zolma wa la fel noor : wal 2an radda yadahoo 3alaya alnahara kolahoo : abla lahmee wa geldee wa sa7aka 3ezamee.",
+                        "A7ata bee wa nakkasa ra2see : wa azalanee wa aglasanee fe mawade3 mozlema : methl olmawta monzol kedam.",
+                        "Sayaga 3alaya 7atta la akhrog : da3afa robotee wa thakala selselatee : da3owtaho fa lam yastageb leya : sarakhtoo elayhee : fa lam yo sarra be salatee : sayaga sobolee.",
+                        "Wa aghlaka masalikee : saralee ka dobben kamel : wa ka asaden fe mawde3en mokhtafen : taradanee wa sara3nee wa taraknee haleka : awtara kawsahoo : wa akamanee hadafan.",
+                        "Le yolkeya feya seehamahoo : adkhala fee kolyataya : noobala go3bateehee : serto ot7okatan le kol sha3bee : wa oghneyatan lahom alnahara kolahoo : gara3nee el7amdaloo : wa rawany men alafsanteen.",
+                        "Hashama bel 7asa asnanee : wa at3amanee alramad : fa ba3oodat nafsee 3an el salamee : wa nasayto alkhayrat : wa badat akheratee : wa raga2ee men alrab.",
+                        "Ozkor bo2see wa shaka2ee : walafsanteena walmarara : alatee lam tabra7 min zakeratee : hazama to radedohoo nafsee feya : wa ash3oro bee fee kalby : min agl zalek atamaseko be mara7em elrabee.",
+                        "Le2annaho lam yatroknee 3anhoo : le2anna ra2fatahoo la tazool : 3ala mamar elshohooree : wal ayamee koleha : min mara7em elrabee ennana lam nafna : le2anna ra2fatooka la tafrogh : wa 3azeema heya amanatooka : le2anna ra2fatooka la tafrogh : wa heya gadeeda fee kol sabahen : wa 3azeema heya amanatooka : naseebee howa alraboo kalat nafsee : fa lee zalek argoohoo.",
+                        "Sale7on howa alraboo : lel lazeena yataragoonaho : tayebon lelnafs ellaty tatlobhoo : fal tatawaka3 be sekoot khalas elrab : gayedon lelragol an yahmel alneera mondo sebahoo.",
+                        "Yaglesoo wa7dahoo wa yasmot : le2annaho kad wada3ahoo 3alayhee : yag3aloo feltorabee famahoo : lee 3alahoo yagedoo raga2oo : yameeloo khadahoo lee man yaltemahoo : wa yashba3 ta3yeeran : ela2an alraboo la yokseehee 3anhoo : eela alabad.",
+                        "Fa inahoo wa law wada3a : yatara2afoo ka kathratee ra7mateehee : lee2anahoo lam yarzelahoo min kalbeehee : bal wada3a banee elbashar.",
+                        "Ez azala ta7ta kadamayhee : gamee3 almortabeteena bel ardee : aw 7arafa 7aka alragool : amama wag-ha al3aley : awtara7 olinsana fel kada2ee : 3enda mayo7kamoo 3alayhee : afama ya kool olrab : man za alazee kala fa kana : wa alraboo lam ya2mor.",
+                        "Alaysa min fam el3aley : takhrogo olkhayrata walshoroor : kayfa yatazamaroo : alinsan ol7ay : almo3akabo le agl khateyateehee.",
+                        "Fal naf7as torookana : wa nakhtaber khatawatana : wa narga3 eela alrab : wal narfa3 koloobana ma3 aydeyana : ladal 3aley alazee felsama2ee kad akhta2na : wa aznabna wa 3asayna : wa anta lam taghfera lana.",
+                        "Kad elta7afta wa 7akamta bel ghadabee : wa taradtana wa kataltana : wa anta lam toshfek : elta7afta be ghamamin : lee2ala tabnoogha elayka salatee : lee2atade3a lekay la ara wa otra7.",
+                        "Taraktana fee wast elshe3oobee : fa fata7a gamee3 a3da2ana : afwahahom 3aleyna : fa rafa3oona : thoma tara7oona : fa 7alla bena khawfoon wa sa7koon : 3aynay taseela ka yanabee3 meyahen : 3ala sa7kee benta sha3bee.",
+                        "3aynay taskob wa la takofhoo : wa la arfa3oo ra2see : 7atta yatatala3 elraboo min alsama2ee : 3aynay ta7zan 3ala nafsee : min agl ban elmadeena.",
+                        "Kad estanee a3da2ee : esteyadan ka 3osfooren be la sababen : wa akradoo felgobba 7ayatee : wa tara7oo 3alaya shabaka : fadat almeya7 fawka ra2sy : wa kolto ennaho taraknee 3anhoo.",
+                        "Sarakhtoo be ismak ya rab min gob ensof leyen : fa sama3ta sawtee : la tamel ozonak 3an telbatee : yawma ensarakhtoo elayka ektarabta men ma3oonatee : wa kolta leya la takhaf : wa kolta leya la takhaf.",
+                        "Khasamt ya rab khosoomata nafsee : wa khalasta 7ayatee : wa nazart ya rab eela etterabee : wa 7akamta fee da3way : ra2ayt entekahom kolahoo : wa ta7meek shefa2 elka2emeena 3alaya.",
+                        "Serto talawata homa alnaharoo kolahoo.",
+                        "Fe golooseehim wa fee keyameehim : onzor eela 3oyooneehim : wa gazeehim belta3b 3ala kasawat koloobeehim : wa otrodhom be ghadabik : wafneehim ya rab min ta7ta alsama2ee.",
+                        "Magdan lel thalooth elkodoos : eelahna eelal abad amen.",
+                    ],
+                    arabic: [
+                        "من مراثى أرميا النبى بركته على جميعنا.",
+                        "أَنَا هُوَ الرَّجُلُ الَّذِي رأَى مَذَلَّةً بِقَضِيبِ سَخَطِهِ. قَادَنِي وَسَيَّرَنِي فِي الظَّلاَمِ وَلاَ نُورَ. حَقّاً إِنَّهُ يَعُودُ وَيَرُدُّ عَلَيَّ يَدَهُ الْيَوْمَ كُلَّهُ. أَبْلَى لَحْمِي وَجِلْدِي. كَسَّرَ عِظَامِي.",
+                        "بَنَى عَلَيَّ وَأَحَاطَنِي بِعَلْقَمٍ وَمَشَقَّةٍ. أَسْكَنَنِي فِي ظُلُمَاتٍ كَمَوْتَى الْقِدَمِ.",
+                        "سَيَّجَ عَلَيَّ فَلاَ أَسْتَطِيعُ الْخُرُوجَ. ثَقَّلَ سِلْسِلَتِي. أَيْضاً حِينَ أَصْرُخُ وَأَسْتَغِيثُ يَصُدُّ صَلاَتِي. سَيَّجَ طُرُقِي بِحِجَارَةٍ مَنْحُوتَةٍ. قَلَبَ سُبُلِي.",
+                        "هُوَ لِي دُبٌّ كَامِنٌ أَسَدٌ فِي مَخَابِئَ. مَيَّلَ طُرُقِي وَمَزَّقَنِي. جَعَلَنِي خَرَاباً.",
+                        "مَدَّ قَوْسَهُ وَنَصَبَنِي كَغَرَضٍ لِلسَّهْمِ. أَدْخَلَ فِي كُلْيَتَيَّ نِبَالَ جُعْبَتِهِ. صِرْتُ ضِحْكَةً لِكُلِّ شَعْبِي وَأُغْنِيَةً لَهُمُ الْيَوْمَ كُلَّهُ. أَشْبَعَنِي مَرَائِرَ وَأَرْوَانِي أَفْسَنْتِيناً",
+                        "وَجَرَشَ بِالْحَصَى أَسْنَانِي. كَبَسَنِي بِالرَّمَادِ. وَقَدْ أَبْعَدْتَ عَنِ السَّلاَمِ نَفْسِي. نَسِيتُ الْخَيْرَ. وَقُلْتُ: بَادَتْ ثِقَتِي وَرَجَائِي مِنَ الرَّبِّ.",
+                        "ذِكْرُ مَذَلَّتِي وَتَيَهَانِي أَفْسَنْتِينٌ وَعَلْقَمٌ. ذِكْراً تَذْكُرُ نَفْسِي وَتَنْحَنِي فِيَّ. أُرَدِّدُ هَذَا فِي قَلْبِي مِنْ أَجْلِ ذَلِكَ أَرْجُو.",
+                        "إِنَّهُ مِنْ إِحْسَانَاتِ الرَّبِّ أَنَّنَا لَمْ نَفْنَ لأَنَّ مَرَاحِمَهُ لاَ تَزُولُ. هِيَ جَدِيدَةٌ فِي كُلِّ صَبَاحٍ. كَثِيرَةٌ أَمَانَتُكَ. نَصِيبِي هُوَ الرَّبُّ قَالَتْ نَفْسِي مِنْ أَجْلِ ذَلِكَ أَرْجُوهُ.",
+                        "طَيِّبٌ هُوَ الرَّبُّ لِلَّذِينَ يَتَرَجُّونَهُ لِلنَّفْسِ الَّتِي تَطْلُبُهُ. جَيِّدٌ أَنْ يَنْتَظِرَ الإِنْسَانُ وَيَتَوَقَّعَ بِسُكُوتٍ خَلاَصَ الرَّبِّ. جَيِّدٌ لِلرَّجُلِ أَنْ يَحْمِلَ النِّيرَ فِي صِبَاهُ.",
+                        "يَجْلِسُ وَحْدَهُ وَيَسْكُتُ لأَنَّهُ قَدْ وَضَعَهُ عَلَيْهِ. يَجْعَلُ فِي التُّرَابِ فَمَهُ لَعَلَّهُ يُوجَدُ رَجَاءٌ. يُعْطِي خَدَّهُ لِضَارِبِهِ. يَشْبَعُ عَاراً. لأَنَّ السَّيِّدَ لاَ يَرْفُضُ إِلَى الأَبَدِ.",
+                        "فَإِنَّهُ وَلَوْ أَحْزَنَ يَرْحَمُ حَسَبَ كَثْرَةِ مَرَاحِمِهِ. لأَنَّهُ لاَ يُذِلُّ مِنْ قَلْبِهِ وَلاَ يُحْزِنُ بَنِي الإِنْسَانِ.",
+                        "أَنْ يَدُوسَ أَحَدٌ تَحْتَ رِجْلَيْهِ كُلَّ أَسْرَى الأَرْضِ أَنْ يُحَرِّفَ حَقَّ الرَّجُلِ أَمَامَ وَجْهِ الْعَلِيِّ أَنْ يَقْلِبَ الإِنْسَانَ فِي دَعْوَاهُ - السَّيِّدُ لاَ يَرَى!",
+                        "مَنْ ذَا الَّذِي يَقُولُ فَيَكُونَ وَالرَّبُّ لَمْ يَأْمُرْ؟ مِنْ فَمِ الْعَلِيِّ أَلاَ تَخْرُجُ الشُّرُورُ وَالْخَيْرُ؟ لِمَاذَا يَشْتَكِي الإِنْسَانُ الْحَيُّ الرَّجُلُ مِنْ قِصَاصِ خَطَايَاهُ؟",
+                        "لِنَفْحَصْ طُرُقَنَا وَنَمْتَحِنْهَا وَنَرْجِعْ إِلَى الرَّبِّ. لِنَرْفَعْ قُلُوبَنَا وَأَيْدِينَا إِلَى اللَّهِ فِي السَّمَاوَاتِ نَحْنُ أَذْنَبْنَا وَعَصِينَا. أَنْتَ لَمْ تَغْفِرْ.",
+                        "الْتَحَفْتَ بِالْغَضَبِ وَطَرَدْتَنَا. قَتَلْتَ وَلَمْ تُشْفِقْ. الْتَحَفْتَ بِالسَّحَابِ حَتَّى لاَ تَنْفُذَ الصَّلاَةُ.",
+                        "جَعَلْتَنَا وَسَخاً وَكَرْهاً فِي وَسَطِ الشُّعُوبِ. فَتَحَ كُلُّ أَعْدَائِنَا أَفْوَاهَهُمْ عَلَيْنَا. صَارَ عَلَيْنَا خَوْفٌ وَرُعْبٌ هَلاَكٌ وَسَحْقٌ. سَكَبَتْ عَيْنَايَ يَنَابِيعَ مَاءٍ عَلَى سَحْقِ بِنْتِ شَعْبِي.",
+                        "عَيْنِي تَسْكُبُ وَلاَ تَكُفُّ بِلاَ انْقِطَاعٍ حَتَّى يُشْرِفَ وَيَنْظُرَ الرَّبُّ مِنَ السَّمَاءِ. عَيْنِي تُؤَثِّرُ فِي نَفْسِي لأَجْلِ كُلِّ بَنَاتِ مَدِينَتِي.",
+                        "قَدِ اصْطَادَتْنِي أَعْدَائِي كَعُصْفُورٍ بِلاَ سَبَبٍ. قَرَضُوا فِي الْجُبِّ حَيَاتِي وَأَلْقُوا عَلَيَّ حِجَارَةً. طَفَتِ الْمِيَاهُ فَوْقَ رَأْسِي. قُلْتُ: قَدْ قُرِضْتُ.",
+                        "دَعَوْتُ بِاسْمِكَ يَا رَبُّ مِنَ الْجُبِّ الأَسْفَلِ. لِصَوْتِي سَمِعْتَ. لاَ تَسْتُرْ أُذُنَكَ عَنْ زَفْرَتِي عَنْ صِيَاحِي. دَنَوْتَ يَوْمَ دَعَوْتُكَ. قُلْتَ: لاَ تَخَفْ",
+                        "خَاصَمْتَ يَا سَيِّدُ خُصُومَاتِ نَفْسِي. فَكَكْتَ حَيَاتِي. رَأَيْتَ يَا رَبُّ ظُلْمِي. أَقِمْ دَعْوَايَ. رَأَيْتَ كُلَّ نَقْمَتِهِمْ كُلَّ أَفْكَارِهِمْ عَلَيَّ.",
+                        "سَمِعْتَ تَعْيِيرَهُمْ يَا رَبُّ كُلَّ أَفْكَارِهِمْ عَلَيَّ. كَلاَمُ مُقَاوِمِيَّ وَمُؤَامَرَتُهُمْ عَلَيَّ الْيَوْمَ كُلَّهُ.",
+                        "اُنْظُرْ إِلَى جُلُوسِهِمْ وَوُقُوفِهِمْ أَنَا أُغْنِيَتُهُمْ! رُدَّ لَهُمْ جَزَاءً يَا رَبُّ حَسَبَ عَمَلِ أَيَادِيهِمْ. أَعْطِهِمْ غَشَاوَةَ قَلْبٍ لَعْنَتَكَ لَهُمْ. اِتْبَعْ بِالْغَضَبِ وَأَهْلِكْهُمْ مِنْ تَحْتِ سَمَاوَاتِ الرَّبِّ.",
+                        "مجداً للثالوث القدوس الهنا إلى الأبد. آمين.",
+                    ]
+                },
+            ];
+
+            // Check if playing
+            let isPlaying = false;
+
+            // Update DOM
+            function loadSong(song) {
+                title.textContent = song.displayName;
+                for (let i = 0; i < 15; i++) {
+                    const index = i + 1;
+                    englishLyrics = document.getElementById(`englishLyrics${index}`);
+                    copticLyrics = document.getElementById(`copticLyrics${index}`);
+                    arabicLyrics = document.getElementById(`arabicLyrics${index}`);
+                    
+                    englishLyrics.textContent = song.english[i];
+                    copticLyrics.textContent = song.coptic[i];
+                    arabicLyrics.textContent = song.arabic[i];
+                }
+                music.src = `Live Recordings/Lamentations of Jeremiah in Arabic (Live)/Lamentations of Jeremiah in Arabic (Live).m4a`;
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            function selectSong(index) {
+                // Set the song index to the selected index
+                songIndex = index;
+                // Load and play the selected song
+                loadSong(songs[songIndex]);
+                playSong();
+            }
+
+            // On load: Select first song
+            let songIndex = 0;
+            loadSong(songs[songIndex]);
+            pauseSong();
+
+            // Set Song Duration when it's possible to play a song
+            function setSongDuration(e) {
+                const totalSeconds = Math.floor(e.target.duration);
+                const durationMinutes = Math.floor(totalSeconds / 60);
+                let durationSeconds = totalSeconds % 60;
+                if (durationSeconds < 10) {
+                    durationSeconds = `0${durationSeconds}`;
+                }
+                durationEle.textContent = `${durationMinutes}:${durationSeconds}`;
+            }
+
+            // Play
+            function playSong() {
+                isPlaying = true;
+                playBtn.classList.replace("fa-play", "fa-pause");
+                playBtn.setAttribute("title", "Pause");
+                music.play();
+            }
+
+            // Pause
+            function pauseSong() {
+                isPlaying = false;
+                playBtn.classList.replace("fa-pause", "fa-play");
+                playBtn.setAttribute("title", "Play");
+                music.pause();
+            }
+
+            // Previous Song
+            function prevSong() {
+                songIndex--;
+                if (songIndex < 0) {
+                    songIndex = songs.length - 1;
+                }
+                loadSong(songs[songIndex]);
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            // Next Song
+            function nextSong() {
+                songIndex++;
+                if (songIndex > songs.length - 1) {
+                    songIndex = 0;
+                }
+                loadSong(songs[songIndex]);
+                progress.style.width = `0%`;
+                playSong();
+            }
+
+            // Display progress bar width and calculate display for current time function
+            function barWidthAndCurrentTime() {
+                const { duration, currentTime } = music;
+                // Update progress bar width
+                const progressPercent = (currentTime / duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                // Calculate display for current time
+                const currentMinutes = Math.floor(currentTime / 60);
+                let currentSeconds = Math.floor(currentTime % 60);
+                if (currentSeconds < 10) {
+                    currentSeconds = `0${currentSeconds}`;
+                }
+                currentTimeEle.textContent = `${currentMinutes}:${currentSeconds}`;
+            }
+
+            // Update Progress Bar & Time while playing
+            function updateProgressBar() {
+                if (isPlaying) {
+                    barWidthAndCurrentTime();
+                }
+            }
+
+            // Set Progress Bar and current time if and if not playing when user clicks on progress bar
+            function setProgressBar(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                const { duration } = music;
+                music.currentTime = (clickX / width) * duration;
+                if (!isPlaying) {
+                    barWidthAndCurrentTime();
+                }
+            }
+
+            // Event Listeners
+            music.addEventListener("canplay", setSongDuration);
+            playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
+            prevBtn.addEventListener("click", prevSong);
+            nextBtn.addEventListener("click", nextSong);
+            music.addEventListener("timeupdate", updateProgressBar);
+            music.addEventListener("ended", nextSong);
+            progressContainer.addEventListener("click", setProgressBar);
+            src="Functions.js"
+        </script>
+        </html>                 
+    </section>
+
+    <!-- Credits -->
+
+    <p class="credits">Created by Pierre Kostantine</p>
+
+    <!-- Scripts -->
+
+    <script src="Functions.js"></script>
+</body>
+</html>

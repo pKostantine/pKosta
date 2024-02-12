@@ -1,0 +1,259 @@
+.player-lyrics-title {
+    color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.table-lang {
+    width: 100%;
+    align-items: start;
+    z-index: 12;
+}
+
+.lyrics-container {
+    display: block;
+    margin-left: 12rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.lyrics-cell {
+    display: table-cell;
+    padding: 0.3rem;
+    text-align: left;
+    vertical-align: top;
+    width: calc(100% / 3);
+    white-space: pre-line;
+    /* border: 2px solid black; */
+}
+
+.english-lyrics {
+    font-size: 1.1rem;
+}
+
+.coptic-lyrics {
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+.arabic-lyrics {
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.songs-container {
+    height: 500px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.songs-list {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: inherit;
+    color: black;
+    border: 0px solid;
+    margin: 1rem 0.7rem 0 1.5rem;
+}
+
+.songs-list tbody {
+    border-bottom: solid gray 2px;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.songs-list tbody td:hover {
+    background: rgba(177, 177, 177, 0.473);
+    /* transform: translateY(-0.25em); */
+    transition-duration: 250ms;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.player-container {
+    height: 510px;
+    width: 400px;
+    background: #e4e4e4;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.img-container {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
+
+.img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    margin: 5px 0 0;
+}
+
+/* Progress */
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 20px;
+    height: 6px;
+    width: 90%;
+}
+  
+.progress {
+    background: #242323;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+  
+.duration-wrapper {
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Controls */
+.player-controls {
+    position: relative;
+    top: -15px;
+    left: 120px;
+    width: fit-content;
+}
+
+.fas {
+    font-size: 30px;
+    color: rgb(129, 129, 129);
+    margin-right: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: ease 0.2s;
+}
+
+.fas:hover {
+    transition: ease 0.2s;
+    filter: brightness(60%);
+}
+
+.main-button {
+    font-size: 40px;
+    position: relative;
+    top: 3px;
+}
+
+/* Media Query: iPhone (Vertical) */
+@media screen and (max-width: 376px) {
+    .player-container {
+        width: 95vw;
+    }
+
+    .img-container {
+        left: 29px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    .player-controls {
+        top: -10px;
+        left: 100px;
+    }
+}
+
+.progress-n-controls {
+    vertical-align: bottom;
+}
+
+/* Styles for the lyrics pane container */
+/* .lyrics-pane {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 85%;
+    margin: 6rem 0 0 12.8rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 2rem;
+    z-index: 10;
+    overflow: scroll;
+} */
+
+/* Styles for the close button */
+#closeLyricsBtn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.open-full-icon {
+    margin: 0.5rem 0.5rem -3.5rem auto;
+    background-color: #050505; /* Change the background color as needed */
+    color: #e4e4e4;
+    border-radius: 50%; /* Make it a circle */
+    width: 48px; /* Set the width and height for the circle */
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lyrics-header {
+    display: flex;
+    justify-content: left;
+    align-items: top;
+}
+
+.unused {
+    filter: brightness(135%);
+    cursor: default;
+}
+
+.unused:hover {
+    filter: brightness(135%);
+}
+
+@media screen and (max-width: 768px) {
+    /* CSS styles for screens smaller than 768px */
+}
+
+@media screen and (max-width: 576px) {
+    /* CSS styles for screens smaller than 576px (typical smartphones) */
+}

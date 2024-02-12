@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cantor Tharwat.css">
+    <link rel="stylesheet" href="Player.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="Mobile.css">
+    <title>Cantor Tharwat</title>
+</head>
+<body>
+    <!-- Cantor Tharwat المعلم ثروت -->
+
+    <!-- Header and Sidebar -->
+    <section>
+        <section class="logoband">
+            <input type="checkbox" name="" id=""><img class="menu-btn mobile" src="img/Menu Button.png" alt="">
+            <img class="logo" src="img/Cantor Tharwat Logo 4.png" alt="" onclick="homeEN()">
+            <div class="container">
+                <img class="logos" src="img/Instagram Clear Logo.png" alt="" onclick="ig()">
+                <img class="logos" src="img/Facebook Clear Logo.png" alt="" onclick="fb()">
+                <img class="logos" src="img/Soundcloud Clear Logo.png" alt="" onclick="sc()">
+                <img class="logos" src="img/Youtube Clear Logo.png" alt="" onclick="yt()">
+                <img class="logos" src="img/Spotify Clear Logo.png" alt="" onclick="spotify()">
+                <img class="logos" src="img/Apple Music Clear Logo.png" alt="" onclick="apple()">
+                <p class="contact">Email: cantortharwat.feedback@gmail.com</p>
+            </div>
+        </section>
+        <section class="menu">
+            <div>
+                <button class="menubuttons menu-current" onclick="homeEN()">Home</button>
+                <button class="menubuttons" onclick="liveEN()">Live Recordings</button>
+                <button class="menubuttons" onclick="studioEN()">Studio Recordings</button>
+                <button class="menubuttons unreleased">Lyrics</button>
+                <button class="menubuttons unreleased">Lessons</button>
+                <button class="menubuttons unreleased">عربي</button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Home Page -->
+
+    <section class="latest">
+        <h1 class="latestIntro">Our latest project...</h1>
+        <table>
+            <tbody>
+                <td class="leftTable"><p class="latestName">At the Start of My Hymn</p>
+                    <table class="lnl">
+                        <tbody><td class="lyricsTitle">
+                            <!-- Lyrics<img class="lyricsIcon" src="Lyrics Icon.png" alt=""> -->
+                            <p class="lyricsPreview">
+                                <br>At the start of my hymn : I glorify God’s name <br>
+With joy I exalt Him : Pikhristos we proclaim <br>
+Was born in Bethlehem : On the cross, He was slain<br>
+He rose on the third day : And to His mother we say<br>
+<br>
+For B the bush burning : Aflame but unconsumed<br>
+The divine fire didn’t : Cause damage or burn you<br>
+Through the Holy birthing : Of the Blessed One in Truth<br>
+You kept virginity : Mother of purity<br>
+<br>
+For C the censer gold : Gold is for purity <br>
+You the censer behold : The live coal you carried<br>
+Symbolising the Lord : Fulfilling prophecies<br>
+They spoke of the mystery : Ethve pijinmisi<br>
+                            </p>
+                            <button onclick="lyricsLatestEN()" type="button" class="btn btn-info btn-lg disabled">Continue</button>
+                            <button onclick="listenLatestEN()" type="button" class="btn btn-primary btn-lg">Listen</button>
+                        </td></tbody>
+                    </table>
+                </td>
+                <td class="vidCell">
+                    <video controls width="550">
+                        <source src="img/At the Start of My Hymn (Announcement).mp4" type="video/mp4" />
+                      </video>
+                </td>
+            </tbody>
+        </table>
+    </section>
+    <div class="pagebreak"></div>
+    <section class="top">
+        <h1 class="topintro">Our top live recordings...</h1>
+        <div class="row">
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/Bright Saturday.png" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Bright Saturday ♱ The Third Hoos</h5>
+                  <p class="card-text">ⲕⲥⲙⲁⲣⲱⲟⲩⲧ ⲡϭⲟⲓⲥ ⲫⲛⲟⲩϯ ⲛⲧⲉ ⲛⲉⲛⲓⲟϯ : ⲕⲉⲣϩⲟⲩⲟ ⲥⲙⲁⲣⲱⲟⲩⲧ ⲕⲉⲣϩⲟⲩⲟ ϭⲓⲥⲓ ϣⲁ ⲛⲓⲉⲛⲉϩ...</p>
+                  <button onclick="listenL1EN()" type="button" class="btn btn-primary cardBtn">Listen</button><button onclick="lyricsL1EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/Feast of the Pentecost.png" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Pentecost ♱ Asomen</h5>
+                    <p class="card-text"><br>ⲁⲥⲱⲙⲉⲛ ⲧⲱ ⲕⲩⲣⲓⲱ : ⲉⲛⲇⲟⲝⲱⲥ ⲅⲁⲣ ⲇⲉ ⲇⲟⲝⲁⲥⲑⲉ<br>ⲁⲛⲉⲗⲑⲱⲛ ⲓⲥ ⲟⲩⲣⲁⲛⲟⲥ : ⲁⲝⲓⲧⲟⲛ...</p>
+                    <button onclick="listenL2EN()" type="button" class="btn btn-primary">Listen</button><button onclick="lyricsL2EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/The Divine Liturgy.png" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">The Liturgy ♱ Long Hiten</h5>
+                    <p class="card-text"><br>Ϩⲓⲧⲉⲛ ⲛⲓⲡⲣⲉⲥⲃⲓⲁ : ⲛⲧⲉ ϯⲑⲉⲟⲧⲟⲕⲟⲥ ⲉⲑⲟⲩⲁⲃ ⲙⲁⲣⲓⲁ : ⲡϭⲟⲓⲥ ⲁⲣⲓϩⲙⲟⲧ ⲛⲁⲛ ⲙⲡⲓⲭⲱ ⲉⲃⲟⲗ ⲛⲧⲉ ⲛⲉⲛⲛⲟⲃⲓ...</p>
+                    <button onclick="listenL3EN()" type="button" class="btn btn-primary">Listen</button><button onclick="lyricsL3EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div><button onclick="liveEN()" class="next-button-centred"><i class="material-icons">chevron_right</i></button></div>
+        </div>
+    </section>
+    <div class="pagebreak"></div>
+    <section class="top">
+        <h1 class="topintro">Our top studio recordings...</h1>
+        <div class="row">
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/English Veneration Melodies Studio.png" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">English Veneration Melodies ♱ At the Start of My Hymn</h5>
+                    <p class="card-text">At the start of my hymn : I glorify God’s name : With joy I exalt Him...</p>
+                    <button onclick="listenS1EN()" type="button" class="btn btn-primary cardBtn">Listen</button><button onclick="lyricS1EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/Holy Week Studio.png" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Pascha ♱ Omonogenees</h5>
+                    <p class="card-text"><br><br>ⲟ ⲙⲟⲛⲟⲅⲉⲛⲏⲥ ⲩⲓⲟⲥ ⲕⲉ Ⲗⲟⲅⲟⲥ ⲧⲟⲩ ⲑⲉⲟⲩ ⲁⲑⲁⲛⲁⲧⲟⲥ ⲩⲡⲁⲣⲭⲱⲛ ⲕⲉ ⲕⲁⲧⲁ ⲇⲉⲝⲁⲙⲉⲛⲟⲥ...</p>
+                    <button onclick="listenS2EN()" type="button" class="btn btn-primary">Listen</button><button onclick="lyricsS2EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; padding: 0;">
+                <img class="card-img-top" src="img/Lazarus Saturday Studio.png" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Lazarus Saturday ♱ Verses of the Cymbals</h5>
+                    <p class="card-text"><br>ⲭⲉⲣⲉ Ⲗⲁⲍⲁⲣⲟⲥ ⲫⲏⲉⲧⲁϥⲧⲟⲩⲛⲟⲥϥ : ⲙⲉⲛⲉⲛⲥⲁ ϥⲧⲟⲟⲩ ⲛⲉϩⲟⲟⲩ : ⲙⲁⲧⲟⲩⲛⲟⲥ ⲡⲁϩⲏⲧ ⲡⲁϭⲟⲓⲥ ⲓⲏⲥⲟⲩⲥ...</p>
+                    <button onclick="listenS3EN()" type="button" class="btn btn-primary">Listen</button><button onclick="lyricsS3EN()" type="button" style="color: #007bff; background-color: transparent; border-color: #007bff;" class="btn cardBtn">Lyrics</button>
+                </div>
+            </div>
+            <div><button onclick="studio()" class="next-button-centred"><i class="material-icons">chevron_right</i></button></div>
+        </div>
+    </section>
+    <div class="pagebreak"></div>
+    <section class="top">
+        <h1 class="topIntro">Our top lessons...</h1>
+        <table class="recordingsContainer" style="text-align: center;">
+            <tbody class="vidCell">
+                <td><iframe width="560" height="315" src="https://www.youtube.com/embed/D2yM8GtOvQw?si=cOnVJAo-qfR4DgC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
+            </tbody>
+            <tbody class="vidCell">
+                <td><iframe width="560" height="315" src="https://www.youtube.com/embed/PwZH1SRg3CU?si=tqGyXYfbw5klQfT6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
+                <td><button onclick="lessonsEN()" class="next-button"><i class="material-icons">chevron_right</i></button></td>
+            </tbody>
+            <tbody class="vidCell"> 
+                <td><iframe width="560" height="315" src="https://www.youtube.com/embed/GGqW7rf0_Eg?si=YOE2Q3QXd7TsPOG_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
+            </tbody>
+        </table>
+    </section>
+    <div class="pagebreak"></div>
+    <p class="credits">Created by Pierre Kostantine</p>
+    <script src="Functions.js"></script>
+</body>
+</html>
