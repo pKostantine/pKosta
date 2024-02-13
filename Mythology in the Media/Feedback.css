@@ -1,0 +1,72 @@
+body {
+    /* background: no-repeat url(https://www.trinityhealth.org/wp-content/uploads/2018/12/Pharmacy.jpg);
+    background-size: cover; */
+    background: white;
+}
+
+#buttonband {
+    background-color: rgb(190, 180, 180);
+    height: 5em;
+    width: 102%;
+    margin-left: -10;
+}
+
+#menubuttons {
+    background: rgb(190, 180, 180);
+    color: whitesmoke;
+    border: 0px solid;
+    padding: 1.4em 2em;
+    font-size: 1.2em;
+    margin: 0 6em;
+}
+
+#menubuttons:hover {
+    background: rgba(245, 245, 245, 0.473);
+    transform: translateY(-0.25em);
+    transition-duration: 250ms;
+    cursor: pointer;
+}
+
+#logoband {
+    background-color: white;
+    height: 10em;
+    width: 102%;
+    margin-left: -10;
+    margin-top: -10;
+}
+
+#logo {
+    margin-top: 10px;
+}
+
+#contact:nth-of-type(1) {
+    margin-top: -6em;
+}
+
+#contact {
+    margin-left: 30em;
+    font-size: large;
+}
+
+#feedbackbox {
+    /* padding: 10em; */
+    border: solid 3px ;
+    text-align: left;
+    margin: 3em 43em;
+}
+
+#submitbutton {
+    background: rgb(190, 180, 180);
+    color: whitesmoke;
+    padding: 1em 1.5em;
+    margin-left: 45em;
+    font-size: 0.8em;
+}
+
+#submitbutton:hover {
+    background: rgba(245, 245, 245, 0.473);
+    transform: translateY(-0.25em);
+    transition-duration: 250ms;
+    cursor: pointer;
+    color: gray;
+}

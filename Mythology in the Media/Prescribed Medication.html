@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Prescribed Medication.css">
+    <title>Asclepius Online Pharmacy - Prescribed Medication</title>
+</head>
+<body>
+    <script src="Prescribed Medication.js"></script>
+    <section id="logoband">
+        <img id="logo" src="AOP logo.png" alt="">
+        
+        <div .logo>
+            <p id="contact">Email: asclepiuspharmacy@ascmed.com</p>
+            <p id="contact">Phone: (905) 937-7777</p>
+        </div>
+    </section>
+    <section id="buttonband">
+        <div>
+            <button id="menubuttons" onclick="unprescribedMedication()">Unprescribed Medication</button>
+            <button id="menubuttons" onclick="prescribedMedication()">Prescribed Medication</button>
+            <button id="menubuttons" onclick="feedback()">Personal Feedback</button>
+        </div>
+    </section>
+    <!-- <label for="prescription">Upload Your Prescription Image:</label>
+
+    <input type="file"
+       id="prescription" name="Prescription Image"
+       accept="image/png, image/jpeg"> -->
+       <form method="post" enctype="multipart/form-data">
+        <div>
+          <label for="file">Upload Prescription Image(s)</label>
+          <input type="file" id="file" name="file" multiple>
+        </div>
+        <div>
+          <button id="submitbutton">Submit</button>
+        </div>
+       </form>
+</body>
+</html>
